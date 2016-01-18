@@ -1,8 +1,12 @@
 <h1>Todos</h1>
-<% @listings.each do |listings| %>
+<% @listings.each do |listing| %>
 	<ul>
-	<li><%=listings.description %> </li>
+	<li><%=listing.description %> </li>
 	</ul>
+	<%=link_to "Show", listing_path(listing)%>
+	<%=link_to "Edit", edit_listing_path(listing)%>
+	<%= link_to 'Destroy', listing_path(listing), 
+              method: :delete, data: { confirm: 'Are you sure?' } %>
 	<%end%>
 
 
