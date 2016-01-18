@@ -1,0 +1,20 @@
+<h1> Add new todo item</h1>
+<% if @listing.errors.any?%>
+<h2>There were errors on the form</h2>
+<ul>
+	<%@listing.errors.full_messages.each do |msg|%>
+	  <li><%=msg%></li>
+	<%end%>
+
+</ul>
+<%end%>
+
+<%=form_for @listing do |f|%>
+<p>
+	<%= f.label :description%>
+    <%= f.text_field :description%>
+</p>
+<p>
+	<%= f.submit "submit todo" %>
+</p>
+<%end%> 
